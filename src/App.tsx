@@ -2,13 +2,15 @@ import { useRoutes } from "react-router-dom"
 import Main from "./Dashboard/main"
 import AuthPage from "./auth/AuthPage"
 import ForgotPassword from "./auth/ForgotPassword"
+import LoadingPage from "./Loading/LoadingPage"
 
 
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/dashboard", element: <Main /> },
   { path: "/auth", element: <AuthPage /> },
-  { path: "/OTP", element: <ForgotPassword /> }
+  { path: "/OTP", element: <ForgotPassword /> },
+  { path: "/Loading", element: <LoadingPage /> }
 ]
 
 function Home() {
