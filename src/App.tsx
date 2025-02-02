@@ -3,6 +3,7 @@ import Main from "./Dashboard/main"
 import AuthPage from "./auth/AuthPage"
 import ForgotPassword from "./auth/ForgotPassword"
 import LoadingPage from "./Loading/LoadingPage"
+import { Toaster } from "./components/ui/toaster"
 
 
 const routes = [
@@ -38,6 +39,7 @@ function App() {
     <>
       <div className="relative flex min-h-screen flex-col">
         <div className="flex-1">{children}</div>
+        <Toaster />
       </div>
     </>
   )
