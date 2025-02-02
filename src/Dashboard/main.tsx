@@ -29,7 +29,7 @@ const Main = () => {
           </Avatar>
         </div>
       </nav>
-      <div className="flex-1 p-8 bg-muted">
+      <div className="flex-1 p-8 ">
         <h1 className="text-3xl font-bold">Dashboard Content</h1>
       </div>
     </div>
