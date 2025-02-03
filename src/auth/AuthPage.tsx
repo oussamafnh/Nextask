@@ -12,7 +12,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useToast } from "@/hooks/use-toast"
 
-// Zod schemas for validation
 const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
@@ -52,12 +51,6 @@ const AuthPage = () => {
     resolver: zodResolver(signupSchema),
   });
 
-  // Handle social login
-  const handleSocialLogin = (provider: 'google' | 'facebook') => {
-    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/${provider}`;
-  };
-
-  // Handle form errors
   const handleFormError = (errors: any) => {
     Object.entries(errors).forEach(([fieldName, error]) => {
       if (error && typeof error === 'object' && 'message' in error) {
@@ -144,14 +137,12 @@ const AuthPage = () => {
                   <Button 
                     variant="outline" 
                     className="w-1/2 flex items-center justify-center gap-2"
-                    onClick={() => handleSocialLogin('google')}
                   >
                     <FaGoogle size={20} /> Google
                   </Button>
                   <Button 
                     variant="outline" 
                     className="w-1/2 flex items-center justify-center gap-2"
-                    onClick={() => handleSocialLogin('facebook')}
                   >
                     <FaFacebook size={20} /> Facebook
                   </Button>
@@ -190,14 +181,12 @@ const AuthPage = () => {
                   <Button 
                     variant="outline" 
                     className="w-1/2 flex items-center justify-center gap-2"
-                    onClick={() => handleSocialLogin('google')}
                   >
                     <FaGoogle size={20} /> Google
                   </Button>
                   <Button 
                     variant="outline" 
                     className="w-1/2 flex items-center justify-center gap-2"
-                    onClick={() => handleSocialLogin('facebook')}
                   >
                     <FaFacebook size={20} /> Facebook
                   </Button>
